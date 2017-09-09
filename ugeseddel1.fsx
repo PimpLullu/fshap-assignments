@@ -1,24 +1,19 @@
-// 2.2
 open System
-
-
 //random list generator
 let genRandomNumbers count =
     let rnd = System.Random()
     List.init count (fun _ -> rnd.Next (1, 100))
 
 
-// 2.1
+// 2.1 Lav en funktion mindste(A,n) der returnerer det mindste tal i en tabel A med n tal
+let list1 = [8;3;9;7;2;4]
 let mindste (a:int list) n =
     let mutable min = a.[0]
-    for i = 1 to n-1
+    for i = 1 to n-1 do
         if a.[i] < min then
             min <- a.[i]
-        else done
     min
-
-
-// 2.2
+// 2.2 [*] Lav en funktion der bestemmer om to tal fra tabellen summer til 100
 
 let ranList1 = genRandomNumbers 100
 
@@ -38,4 +33,3 @@ let findSumOfTwo (a:int list) n x =
         else
             hi <- (hi - 1)
     found
-

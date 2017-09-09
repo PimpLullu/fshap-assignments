@@ -33,3 +33,23 @@ let findSumOfTwo (a:int list) n x =
         else
             hi <- (hi - 1)
     found
+
+(*  Zombieduellering Du har en hær af n hjernetomme zombier. Du vil gerne finde den stærkeste og svageste
+    zombie blandt gruppen. Ved at sætte to zombier sammen i et bur med en luns kød kan du hurtigt afgøre
+    hvilken af de to er stærkest. Desværre slider det på zombier at slås, så du vil gerne minimere antallet af dueller.
+    Løs følgende opgaver.    *)
+
+// 4.1 Vis hvordan du finder den stærkeste zombie med højst n − 1 dueller.
+
+let zomlist = [5;8;4;9;2;6]
+let findStrongestZombie (a:int list) n =
+    let mutable strong = a.[0]
+    let mutable index = 0
+    for i = 1 to n-1 do
+        if a.[i] > strong then
+            strong <- a.[i]
+            index <- i
+    [index;strong]
+
+
+        

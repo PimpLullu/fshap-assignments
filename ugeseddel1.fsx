@@ -51,5 +51,31 @@ let findStrongestZombie (a:int list) n =
             index <- i
     [index;strong]
 
+let findWeakestZombie (a:int list) n =
+    let mutable weak = a.[0]
+    let mutable index = 0
+    for i = 1 to n-1 do
+        if a.[i] < weak then
+            weak <- a.[i]
+            index <- i
+    [index+1;weak]
 
-        
+//4.2 [*] Vis hvordan du finder både den stærkeste og svageste zombie med højst 3n/2 dueller.
+let zomlist2 = [5;8;15;9;2;6;12;4;8;3;11;16;5;7;6;13;10]
+
+let findBothWeakAndStrong (a:int list) n =
+    let strongA = []
+    let weakA = []
+
+    for i = 0 by 2 to n-1 do
+        if a.[i] > a[i+1] then
+            insert a.[i] strongA
+            insert a.[i+1] weakA
+        else a.[i] < a.[i+1]
+            insert a.[i+1] strongA
+            insert a.[i] weakA
+
+
+    
+
+

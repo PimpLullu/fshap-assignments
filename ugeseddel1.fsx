@@ -1,5 +1,8 @@
 open System
+open System.Collections.Generic
+
 //random list generator
+let dummy = 8
 let genRandomNumbers count =
     let rnd = System.Random()
     List.init count (fun _ -> rnd.Next (1, 100))
@@ -42,16 +45,16 @@ let findSumOfTwo (a:int list) n x =
 // 4.1 Vis hvordan du finder den stærkeste zombie med højst n − 1 dueller.
 
 let zomlist = [5;8;4;9;2;6]
-let findStrongestZombie (a:int list) n =
+let findStrongestZombie (a:int array) n =
     let mutable strong = a.[0]
     let mutable index = 0
     for i = 1 to n-1 do
         if a.[i] > strong then
             strong <- a.[i]
             index <- i
-    [index;strong]
+    [index+1;strong]
 
-let findWeakestZombie (a:int list) n =
+let findWeakestZombie (a:int array) n =
     let mutable weak = a.[0]
     let mutable index = 0
     for i = 1 to n-1 do
@@ -61,21 +64,22 @@ let findWeakestZombie (a:int list) n =
     [index+1;weak]
 
 //4.2 [*] Vis hvordan du finder både den stærkeste og svageste zombie med højst 3n/2 dueller.
-let zomlist2 = [5;8;15;9;2;6;12;4;8;3;11;16;5;7;6;13;10]
+let zomlist2 = [|5;8;15;9;2;6;12;4;8;3;11;16;5;7;6;13;10|]
 
-let findBothWeakAndStrong (a:int list) n =
-    let strongA = []
-    let weakA = []
+let findWeakAndStrong (a:int array) n =
+    let strongA = [|1..n/2|]
+    let weakA   = [|1..n/2|]
+    let strong  = a.[n-1]
+    let weak    = a.[n-1]
 
-    for i = 0 by 2 to n-1 do
-        if a.[i] > a[i+1] then
-            insert a.[i] strongA
-            insert a.[i+1] weakA
-        else a.[i] < a.[i+1]
-            insert a.[i+1] strongA
-            insert a.[i] weakA
-
-
-    
+    for i in 0..2..n-2 do
+        if a.[i] > a.[i+1] then  
+            strongA.[i/2] <- a.[i]; weakA.[i/2] <- a.[i+1]
+        else
+            strongA.[i/2]<-a.[i+1]; weakA.[i/2] <- a.[i+1]
 
 
+    printfn "Strongest zombie:"
+    findStrongestZombie strongA (n/2)
+    printfn "Weakest zombie:"
+    findWeakestZombie weakA (n/2)

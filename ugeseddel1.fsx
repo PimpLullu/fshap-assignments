@@ -81,8 +81,8 @@ let findWeakAndStrong (a:int array) n =
     printfn "%A" strongA
     printfn "%A" weakA
     
-    //printfn "Strongest zombie:"
-    //findStrongestZombie strongA (n/2)
+    let sz = findStrongestZombie strongA (n/2)
+    printfn "Strongest zombie: %A" sz
 
-    //printfn "Weakest zombie:"
-    //findWeakestZombie weakA (n/2)
+    let wz = findWeakestZombie weakA (n/2)
+    printfn "Weakest zombie: %A" wz

@@ -76,10 +76,13 @@ let findWeakAndStrong (a:int array) n =
         if a.[i] > a.[i+1] then  
             strongA.[i/2] <- a.[i]; weakA.[i/2] <- a.[i+1]
         else
-            strongA.[i/2]<-a.[i+1]; weakA.[i/2] <- a.[i+1]
+            strongA.[i/2] <- a.[i+1]; weakA.[i/2] <- a.[i]
 
+    printfn "%A" strongA
+    printfn "%A" weakA
+    
+    //printfn "Strongest zombie:"
+    //findStrongestZombie strongA (n/2)
 
-    printfn "Strongest zombie:"
-    findStrongestZombie strongA (n/2)
-    printfn "Weakest zombie:"
-    findWeakestZombie weakA (n/2)
+    //printfn "Weakest zombie:"
+    //findWeakestZombie weakA (n/2)

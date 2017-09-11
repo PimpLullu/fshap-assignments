@@ -1,0 +1,35 @@
+//1.1 Declare a function g: int -> int, where g (n) = n + 4.abs
+
+
+//1.2 Declare a function h: float * float -> float, where h (x, y) = x 2 + y 2 . Hint: Use the function System.Math.Sqrt.
+
+
+//1.3 Write function expressions corresponding to the functions g and h in the exercises 1.1 and 1.2.
+
+
+//1.4 Declare a recursive function f: int -> int, where f (n) = 1 + 2 + · · · + (n − 1) + n
+// for n ≥ 0 . (Hint: use two clauses with 0 and n as patterns.) 
+//State the recursion formula corresponding to the declaration. Give an evaluation for f (4) .
+
+
+//1.5 The sequence F 0 , F 1 , F 2 , . . . of Fibonacci numbers is defined by:
+//F = 0     F = 1       F(n) = F n−1 + F n−2
+//Thus, the first members of the sequence are 0, 1, 1, 2, 3, 5, 8, 13, . . . .
+//Declare an F# function to compute F n . Use a declaration with three clauses, where the patterns
+//correspond to the three cases of the above definition. Give an evaluations for F4.
+
+
+//1.6 Declare a recursive function sum: int * int -> int, where
+//sum (m, n) = m + (m + 1) + (m + 2) + · · · + (m + (n − 1)) + (m + n)
+//for m ≥ 0 and n ≥ 0 . (Hint: use two clauses with (m,0) and (m,n) as patterns.)
+//Give the recursion formula corresponding to the declaration.
+
+
+//1.7 Determine a type for each of the expressions:
+//(System.Math.PI, fact -1)     fact(fact 4)
+//power(System.Math.PI, fact 2)     (power, fact)
+
+
+//1.8 Consider the declarations:    let a = 5;;     let f a = a + 1;;   let g b = (f b) + a;;
+//Find the environment obtained from these declarations and write the evaluations of the expres-
+//sions f 3 and g 3.

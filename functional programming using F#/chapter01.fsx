@@ -20,15 +20,18 @@ let pythagoras2 = function // pythagoras (3.0, 4.0)
 //1.4 Declare a recursive function f: int -> int, where f (n) = 1 + 2 + · · · + (n − 1) + n
 // for n ≥ 0 . (Hint: use two clauses with 0 and n as patterns.) 
 //State the recursion formula corresponding to the declaration. Give an evaluation for f (4) .
-
-
-
+let rec partialSum = function
+    | 1 -> 1
+    | n -> n + partialSum n-1
+ 
 //1.5 The sequence F 0 , F 1 , F 2 , . . . of Fibonacci numbers is defined by:
 //F = 0     F = 1       F(n) = F n−1 + F n−2
 //Thus, the first members of the sequence are 0, 1, 1, 2, 3, 5, 8, 13, . . . .
 //Declare an F# function to compute F n . Use a declaration with three clauses, where the patterns
 //correspond to the three cases of the above definition. Give an evaluations for F4.
-
+let rec fib = function
+    | 0 | 1 -> 1
+    | n -> fib(n-1) + fib(n-1)
 
 //1.6 Declare a recursive function sum: int * int -> int, where
 //sum (m, n) = m + (m + 1) + (m + 2) + · · · + (m + (n − 1)) + (m + n)

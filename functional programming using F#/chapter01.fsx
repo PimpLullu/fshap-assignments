@@ -9,11 +9,18 @@ let pythagoras x y =
     Math.Sqrt((pow2 x)+(pow2 y))
 
 //1.3 Write function expressions corresponding to the functions g and h in the exercises 1.1 and 1.2.
+let addFour1 = fun n -> n+4
+let addFour2 = function
+    | n -> n+4
 
+let pythagoras1 = fun x y -> Math.Sqrt((pow2 x)+(pow2 y)) //pythagoras 3.0 4.0
+let pythagoras2 = function // pythagoras (3.0, 4.0)
+    | x, y -> Math.Sqrt((pow2 x)+(pow2 y)) 
 
 //1.4 Declare a recursive function f: int -> int, where f (n) = 1 + 2 + · · · + (n − 1) + n
 // for n ≥ 0 . (Hint: use two clauses with 0 and n as patterns.) 
 //State the recursion formula corresponding to the declaration. Give an evaluation for f (4) .
+
 
 
 //1.5 The sequence F 0 , F 1 , F 2 , . . . of Fibonacci numbers is defined by:

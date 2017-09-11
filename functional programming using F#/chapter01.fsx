@@ -1,8 +1,12 @@
+open System
 //1.1 Declare a function g: int -> int, where g (n) = n + 4.abs
+let addFour n =
+    n + 4
 
-
-//1.2 Declare a function h: float * float -> float, where h (x, y) = x 2 + y 2 . Hint: Use the function System.Math.Sqrt.
-
+//1.2 Declare a function h: float * float -> float, where h (x, y) = root(x^2 + y^2). Hint: Use the function System.Math.Sqrt.
+let pow2 x = x*x
+let pythagoras x y =
+    Math.Sqrt((pow2 x)+(pow2 y))
 
 //1.3 Write function expressions corresponding to the functions g and h in the exercises 1.1 and 1.2.
 

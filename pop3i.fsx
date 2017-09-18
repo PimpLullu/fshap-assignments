@@ -85,6 +85,16 @@ let factIt =
         printfn "n = %2i\tfact = %10i" n (fact n)
         n <- n + 1
 
+let fact64 n =
+    let mutable i = 1L
+    let mutable res = 1L
+    while i < int64(n+1) do
+        res <- res * i
+        i <- i + 1L
+    res
 
-
-
+let factIt64 =
+    let mutable n = 1
+    while (fact64 n) > int64 0 do
+        printfn "n = %2i\tfact = %19i" n (fact64 n)
+        n <- n + 1

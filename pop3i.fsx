@@ -69,4 +69,22 @@ let multiplicationTable =
 
 //////////////////////////////////////////////////
 //3ø.6
+//(a)
+let fact n =
+    let mutable i = 1
+    let mutable res = 1
+    while i < (n+1) do
+        res <- res * i
+        i <- i + 1
+    res
+
+//(b)
+let factIt =
+    let mutable n = 1
+    while (fact n) > 0 do
+        printfn "n = %2i\tfact = %10i" n (fact n)
+        n <- n + 1
+
+
+
 

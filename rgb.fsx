@@ -12,7 +12,11 @@ let rec trunc (r,g,b) =
     | (_,_,b) when (r,g,b) > (r,g,255)  -> trunc (r,g,255)
     | (_,_,_)                           -> (r,g,b)
 
+let add (r1,g1,b1) (r2,g2,b2) =
+    trunc(r1+r2,g1+g2,b1+b2)
 
-let add x y =
-    let c = x + y
-    c
+let scale a (r,g,b) =
+    trunc(a*r,a*g,a*b)
+
+let gray (r,g,b) =
+    (r+g+b)/2

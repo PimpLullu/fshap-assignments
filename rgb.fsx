@@ -1,8 +1,9 @@
 module RGB
 
-type Color = {r:int;g:int;b:int}
+type Color = int*int*int
+let c = (10,60,100):Color
 
-let rec trunc (r,g,b) =
+let rec trunc (r,g,b):Color =
     match (r,g,b) with
     | (r,_,_) when (r,g,b) < (0,g,b)    -> trunc (0,g,b)
     | (r,_,_) when (r,g,b) > (255,g,b)  -> trunc (255,g,b)
@@ -19,4 +20,9 @@ let scale a (r,g,b) =
     trunc(a*r,a*g,a*b)
 
 let gray (r,g,b) =
-    (r+g+b)/2
+    let (r2,g2,b2) = trunc(r,g,b)
+    (r2+g2+b2)/3
+
+let grayTriplet (r,g,b):Color =
+    let c = gray(r,g,b)
+    (c,c,c)

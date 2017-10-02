@@ -11,6 +11,7 @@ let multiplicity x (xs:int list) =
     count
 
 //5ø.2
+// Splits a list into 2 lists, half through the list.
 let split (xs:int list) =
     let mutable x = (xs.Length/2)
     if (xs.Length%2) = 1 then
@@ -19,13 +20,34 @@ let split (xs:int list) =
     let xs2 = xs.[x+1..]
     (xs1,xs2)
 
+// Splits a list into 2 lists, by even and odd numbers.
+let split2 (xs:int list) =
+    let mutable xs1 = []
+    let mutable xs2 = []
+    for i=xs.Length-1 downto 0 do
+        if (xs.[i] % 2) = 0 then
+            xs1 <- xs.[i]::xs1
+        else
+            xs2 <- xs.[i]::xs2
+    (xs1,xs2)
+        
+// Splits a list into 2 lists, one by one.
+let split3 (xs:int list) =
+    let mutable xs1 = []
+    let mutable xs2 = []
+    for i=xs.Length-1 downto 0 do
+        if (i % 2) = 0 then
+            xs1 <- xs.[i]::xs1
+        else
+            xs2 <- xs.[i]::xs2
+    (xs1,xs2)
 //5ø.3
     
 //5ø.4
     
 //5ø.5
 let evens (xs:int list) =
-    (fun x -> x % 2) |>  List.filter in xs 
+     xs |> List.filter (fun x -> x % 2 = 0) 
   
 //5ø.6
     

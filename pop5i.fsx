@@ -42,9 +42,21 @@ let split3 (xs:int list) =
             xs2 <- xs.[i]::xs2
     (xs1,xs2)
 //5ø.3
+let reverseApply x f =
+    f x
     
 //5ø.4
-    
+// int -> (int -> int) is a int function, that uses another
+// int -> int function.
+let f1 x y =
+    x+y
+let f2 x =
+    f1 x
+
+// (int -> int) -> int  
+let f3 f:int =
+    f 5 
+
 //5ø.5
 let evens (xs:int list) =
      xs |> List.filter (fun x -> x % 2 = 0) 

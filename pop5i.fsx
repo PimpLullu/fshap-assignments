@@ -57,9 +57,9 @@ let evens (xs:int list) =
     
 //5ø.9
 let squares n =
-    let a = [|0..n-1|]
-    for i=1 to n-1 do
-        a.[i] <- i*i
+    let a = [|1..n|]
+    for i in a do
+        a.[i-1] <- i*i
     a
     
 //5ø.10

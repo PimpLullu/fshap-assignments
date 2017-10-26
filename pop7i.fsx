@@ -6,6 +6,8 @@ let rec insert y = function
 
 let isort xs = List.fold (fun acc x -> insert x acc) [] xs
 
+// abe
+
 let xs = [7;55;34;23;5;42;32;34;8]
 
 isort xs |> printfn "%A"
